@@ -1,0 +1,280 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.wrapper {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+#header {
+	display: flex;
+	width: 100%;
+	background: yellow;
+	padding: 20px;
+	align-items: center;
+	justify-content: space-between;
+}
+/* скрываем чекбокс */
+#menu__toggle {
+	position: absolute;
+	opacity: 0;
+}
+
+/* стилизуем кнопку */
+.menu__btn {
+  display: none; /* используем flex для центрирования содержимого */
+  align-items: center;  /* центрируем содержимое кнопки */
+  position: relative;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+  margin: 5px auto;
+}
+
+/* добавляем "гамбургер" */
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #616161;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+/* контейнер меню */
+.menu__box {
+  display: flex;
+  position: static;
+  visibility: visible;
+  justify-content: flex-end;
+  top: 0;
+  left: -100%;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 5px 20px;
+  list-style: none;
+  text-align: center;
+  background-color: inherit;
+}
+
+/* элементы меню */
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.menu__item:hover {
+  background-color: #CFD8DC;
+}
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+}
+
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: 0;
+}
+#main {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0;
+	flex-direction: row;
+	display: flex;
+}
+.main-content {
+	display: flex;
+	width: 100%;
+}
+.sidebar-left {
+	order: 1;
+	display: flex;
+	justify-content: center;
+	min-width: 210px;
+	background: pink;
+}
+.content {
+	display: flex;
+	flex-direction: column;
+	order: 2;
+	text-align: center;
+	padding: 25px;
+}
+.content h1{
+	text-transform: uppercase;
+	font-size: 25px;
+}
+.list {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin: 0 -15px;
+	padding: 0 10px;
+}
+.list > li {
+	
+}
+.card {
+	width: 30%;
+	margin-bottom: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid black;
+	border-radius: 20px;
+	padding: 20px;
+}
+.card-logo {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 10px solid green;
+}
+.card h3 {
+	padding: 10px 0;
+}
+.card p {
+	margin-bottom: 15px;
+	flex-grow: 2;
+}
+.btn {
+	margin-top: auto;
+	color: white;
+	border-radius: 20px;
+	padding: 5px 20px;
+	background: #d864ed;
+	border: none;
+}
+.sidebar-right {
+	order: 3;
+	display: flex;
+	justify-content: center;
+	min-width: 210px;
+	background: blue;
+}
+#footer {
+	flex: 0 0 auto;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	padding: 10px;
+	flex-shrink: 0;
+	background: green;
+}
+
+/* 3 задание */
+.holder {
+	border: 2px solid black;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	width: 50%;
+	height: 100px;
+	flex-direction: row;
+	display: flex;
+	flex-wrap: wrap;
+}
+.holder div:nth-child(1) {
+	border-top-left-radius: 28px;
+	order: 1;
+	width: 50%;
+	height: 50%;
+	background: red;
+}
+.holder div:nth-child(2) {
+	order: 4;
+	width: calc(100% / 3);
+	height: 50%;
+	background: blue;
+}
+.holder div:nth-child(3) {
+	width: calc(100% / 3);
+	order: 3;
+	height: 50%;
+	background: purple;
+}
+.holder div:nth-child(4) {
+	width: calc(100% / 3);
+	height: 50%;
+	order: 5;
+	background: green;
+}
+.holder div:nth-child(5) {
+	order: 2;
+	border-top-right-radius: 28px;
+	width: 50%;
+	height: 50%;
+	background: orange;
+}
+@media (max-width: 991px) {
+	.card {
+		width: 48%;
+	}
+	.menu__box {
+	  display: block;
+	  position: fixed;
+	  visibility: hidden;
+	  top: 0;
+	  right: 0;
+	  width: 300px;
+	  height: 100%;
+	  margin-left: auto;
+	  margin-right: 0;
+	  padding: 80px 0;
+	  list-style: none;
+	  text-align: center;
+	  background-color: #ECEFF1;
+	  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+	}
+	.menu__btn {
+	  display: flex;
+	}
+}
+@media (max-width: 768px) {
+	.main-content {
+		flex-wrap: wrap;
+	}
+	.sidebar-left {
+		order: 2;
+		width: 100%;
+	}
+	.content {
+		order: 1;
+		width: 100%;
+	}
+	.sidebar-right {
+		order: 3;
+		width: 100%;
+	}
+}

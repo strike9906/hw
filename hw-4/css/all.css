@@ -1,0 +1,208 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	background: #0d5825;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.nav {
+	width: 320px;
+	height: 100%;
+	position: fixed;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 15px 20px;
+    background: grey;
+    z-index: 2;
+    left: -320px;
+}
+.nav-toggle {
+	position: absolute;
+	height: 100px;
+	width: 40px;
+	left: 320px;
+	color: #dadada;
+	font-size: 1.2em;
+	background: inherit;
+	cursor: pointer;
+	z-index: 2222;
+}
+.nav-toggle:after {
+	padding-left: 10px;
+    content: '\2630';
+    text-decoration: none;
+}
+
+.nav-toggle:hover {
+    color: #f4f4f4;
+}
+/* Невидимый флажок*/
+[id='nav-toggle'] {
+    position: relative;
+    display: none;
+}
+
+[id='nav-toggle']:checked ~ .nav {
+    left: 0;
+    overflow-y: auto;
+}
+.nav > ul{
+	padding: 40px 40px;
+}
+.nav > ul > li {
+	padding: 5px 0;
+	font-size: 25px;
+	list-style: none;
+}
+.nav > ul > li::before {
+	content: '\25c6'; 
+  	color: orange; 
+  	font-weight: bold;
+  	display: inline-block;
+    width: 25px; 
+}
+.nav > ul > li >a {
+	color: white;
+	text-decoration: none;
+}
+.menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: right;
+}
+.menu > li {
+	display: block;
+	padding: 0 10px;
+}
+#main {
+	width: 900px;
+	height: 600px;
+	margin: 0 auto;
+	text-align: center;
+}
+blockquote {
+	color: white;
+	font-size: 25px;
+	padding: 30px 0 100px;
+}
+blockquote p {
+	font-weight: bold;
+}
+blockquote cite {
+	font-style: italic;
+	font-size: 20px;
+}
+.cards > img {
+	position: relative;
+	width: 150px;
+}
+.cards img:first-child {
+	left: 79px;
+	bottom: 20px;
+	transform: rotate(-25deg);
+}
+.cards img:nth-child(2n) {
+	right: 17px;
+	bottom: 15px;
+	transform: rotate(-10deg);
+}
+.cards img:last-child {
+	right: 120px;
+	transform: rotate(5deg);
+}
+#main {
+	width: 100%;
+	height: 200px;
+	justify-content: center
+}
+.blocks > div {
+	position: relative;
+	margin-left: 100px;
+}
+.blocks div:first-child {
+	width: 50px;
+	height: 50px;
+	background: red;
+}
+
+.blocks div:nth-child(2n) {
+	width: 50px;
+	height: 50px;
+	background: blue;
+	bottom: 20px;
+	z-index: 1;
+	left: 30px;
+}
+.blocks div:last-child {
+	width: 50px;
+	height: 50px;
+	background: green;
+	left: 60px;
+	bottom: 40px;
+}

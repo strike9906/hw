@@ -1,0 +1,39 @@
+blockquote p {
+			color: green;
+}
+a[href^='https://'] {
+	color: red;
+}
+.list > li:last-child {
+	background: green;
+}
+.holder > ul + p{
+	font-size: 26px;
+}
+.text-box > h3:first-child {
+	color: pink;
+}
+#greycol {
+	color: grey;
+}
+.text-box > div > p {
+	color: red;
+}
+.text-box > p:nth-child(7){
+	color:green;
+}
+.yellow {
+	color: yellow;
+}
+/* Часть 4 */
+.bg-box {
+	width: 1400px;
+	height: 800px;
+	background: url(../images/lamp.jpg) left top / 70px 100px repeat-x,
+				url(../images/grass.jpg) left bottom / 350px 200px repeat-x,
+				url(../images/hedgehog.jpg) left top / 40px 40px repeat-y,
+				url(../images/donat.png) right top / 40px 40px repeat-y,
+				url(../images/house.jpg) center center / 50% 50% no-repeat,
+				green;
+
+}
